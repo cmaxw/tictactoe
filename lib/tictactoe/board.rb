@@ -20,5 +20,9 @@ module TicTacToe
     def empty?
       @spaces.values.join.strip == ""
     end
+
+    def moves
+      spaces.values.join.gsub(/\s/, "").length
+    end
   end
 end

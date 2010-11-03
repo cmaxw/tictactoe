@@ -51,4 +51,13 @@ describe TicTacToe::Board do
     @board.move("1", "O")
     @board.should_not be_empty
   end
+
+  it "#moves should return the number of filled spaces" do
+    @board.move("1", "O")
+    @board.moves.should == 1
+    @board.move("2", "O")
+    @board.moves.should == 2
+    @board.move("4", "O")
+    @board.moves.should == 3
+  end
 end
