@@ -60,4 +60,17 @@ describe TicTacToe::Board do
     @board.move("4", "O")
     @board.moves.should == 3
   end
+
+  it "raises errors on invalid space" do
+    lambda { @board.move("0", "X") }.should raise_error(TicTacToe::InvalidSpaceError, "You may only play on spaces 1-9.")
+  end
+
+  it "raises errors on invalid marker" do
+    lambda { @board.move("1", "F") }.should raise_error(TicTacToe::InvalidMarkerError, "You may only play as X or O.")
+  end
+
+  it "raises errors on move to an occupied space" do
+    @board.move("1", "O")
+    lambda { @board.move("1", "X") }.should raise_error(TicTacToe::OccupiedSpaceError, "That space is taken.")
+  end
 end
