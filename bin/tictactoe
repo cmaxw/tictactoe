@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + "/../lib/tictactoe.rb"
+
+game = TicTacToe::Game.new
+game.start
+game.play

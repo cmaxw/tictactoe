@@ -32,5 +32,13 @@ module TicTacToe
     def moves
       spaces.values.join.gsub(/\s/, "").length
     end
+
+    def display
+      puts "#{@spaces["1"] == " " ? "1" : @spaces["1"]}|#{@spaces["2"] == " " ? "2" : @spaces["2"]}|#{@spaces["3"] == " " ? "3" : @spaces["3"]}"
+      puts "-+-+-"
+      puts "#{@spaces["4"] == " " ? "4" : @spaces["4"]}|#{@spaces["5"] == " " ? "5" : @spaces["5"]}|#{@spaces["6"] == " " ? "6" : @spaces["6"]}"
+      puts "-+-+-"
+      puts "#{@spaces["7"] == " " ? "7" : @spaces["7"]}|#{@spaces["8"] == " " ? "8" : @spaces["8"]}|#{@spaces["9"] == " " ? "9" : @spaces["9"]}"
+    end
   end
 end
