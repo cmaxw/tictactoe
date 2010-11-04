@@ -21,10 +21,10 @@ module TicTacToe
               break
             end
           end
-        elsif @board.spaces["5"] == "O"
+        elsif @board.spaces["5"] == "O" #middle
           space = (10 - @board.spaces.index("X").to_i).to_s
           @board.move(space, "X")
-        else
+        else #edge (not corner)
           @board.move("5", "X")
         end
       else
